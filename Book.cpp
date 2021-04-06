@@ -1,7 +1,7 @@
 #include "Book.h"
 #include <iostream>
 
-Book::Book(string t, string a, string i, string q)
+Book::Book(std::string t, std::vector<std::string> a, std::string i, std::string q)
 {
     title = t;
     authors = a;
@@ -11,20 +11,24 @@ Book::Book(string t, string a, string i, string q)
 
 void Book::printTitle()
 {
-    cout << title << endl;
+    std::cout << title << std::endl;
 }
 
 void Book::printAuthor()
 {
-    cout << authors << endl;
+    std::cout << "Authors : ";
+    for (size_t i = 0; i < authors.size(); i++)
+    {
+        std::cout << authors.at(i) + "\n";
+    }
 }
 
 void Book::printISBN()
 {
-    cout << ISBN << endl;
+    std::cout << ISBN << std::endl;
 }
 
 void Book::printQuantity()
 {
-    cout << quantity << endl;
+    std::cout << quantity << std::endl;
 }

@@ -1,14 +1,12 @@
 
 #include <string>
-
-using namespace std;
+#include <vector>
 
 class Book
 {
 
 public:
-    Book(string t, string a, string i, string q);
-  
+    Book(std::string t, std::vector<std::string> a, std::string i, std::string q);
 
     void printTitle();
     void printAuthor();
@@ -16,8 +14,8 @@ public:
     void printQuantity();
 
 private:
-    string title;
-    string authors;
-    string ISBN;
-    string quantity;
+    std::string title;
+    std::vector<std::string> authors;
+    std::string ISBN;
+    std::string quantity;
 };
