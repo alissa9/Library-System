@@ -1,7 +1,10 @@
-#include "Book.h"
+#include "Book.hpp"
 #include <iostream>
 
-Book::Book(std::string t, std::vector<std::string> a, std::string i, std::string q)
+Book::Book()
+{
+}
+Book::Book(std::string t, std::vector<std::string> a, std::string i, int q)
 {
     title = t;
     authors = a;
@@ -9,26 +12,51 @@ Book::Book(std::string t, std::vector<std::string> a, std::string i, std::string
     quantity = q;
 }
 
-void Book::printTitle()
+void Book::setTitle(std::string title)
 {
-    std::cout << title << std::endl;
+    this->title = title;
 }
 
-void Book::printAuthor()
+void Book::setAuthor(std::vector<std::string> author)
 {
-    std::cout << "Authors : ";
-    for (size_t i = 0; i < authors.size(); i++)
+
+    this->authors = author;
+}
+void Book::printAuthors()
+{
+    for (size_t i = 0; i < this->authors.size(); i++)
     {
-        std::cout << authors.at(i) + "\n";
+        std::cout << this->authors.at(i) + " - ";
     }
 }
 
-void Book::printISBN()
+void Book::setISBN(std::string ISBN)
 {
-    std::cout << ISBN << std::endl;
+    this->ISBN = ISBN;
 }
 
-void Book::printQuantity()
+void Book::setQuantity(int quantity)
 {
-    std::cout << quantity << std::endl;
+    this->quantity = quantity;
+}
+
+std::string Book::getTitle()
+{
+    return this->title;
+}
+std::vector<std::string> Book::getAuthor()
+
+{
+
+    return this->authors;
+}
+
+std::string Book::getISBN()
+{
+    return this->ISBN;
+}
+
+int Book::getQuantity()
+{
+    return this->quantity;
 }
