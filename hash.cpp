@@ -67,7 +67,6 @@ std::string HashTable::printTable(Book b)
 {
     int pos = Hash(b.getTitle());
     std::string s = this->BooksTable[pos]->getTitle();
-
     return s;
 }
 
@@ -89,6 +88,55 @@ void HashTable::SearchBook(std::string key)
 
             break;
         }
-    Ptr = Ptr->next;
+        Ptr = Ptr->next;
+    }
+}
+
+void HashTable::RemoveBook(std::string key)
+{
+
+    int position = Hash(key);
+    Book *delPtr;
+    Book *Pointer1;
+    Book *Pointer2;
+
+    if (BooksTable[position]->getTitle() == "Empty")
+    {
+        std::cout << "The Book was not found in the data \n " << std::endl;
+    }
+    else if (BooksTable[position]->getTitle() == key && BooksTable[position]->next == nullptr)
+    {
+        BooksTable[position]->getTitle() = "Empty";
+    }
+    else if (BooksTable[position]->getTitle() == key)
+    {
+
+        delPtr = BooksTable[position];
+        BooksTable[position] = BooksTable[position]->next;
+        delete delPtr;
+        std::cout << "The Book was Removed from the data \n " << std::endl;
+    }
+    else
+    {
+        Pointer1 = BooksTable[position]->next;
+        Pointer2 = BooksTable[position];
+        while (Pointer1 != nullptr && Pointer1->getTitle() != key)
+        {
+            Pointer2 = Pointer1;
+            Pointer1 = Pointer1->next;
+        }
+        if (Pointer1 == nullptr)
+
+        {
+            std::cout << "The Book was not found in the data \n " << std::endl;
+        }
+        else
+        {
+            delPtr = Pointer1;
+            Pointer1 = Pointer1->next;
+            Pointer2->next = Pointer1;
+            delete delPtr;
+            std::cout << "The Book was Removed from the data \n " << std::endl;
+        }
     }
 }

@@ -23,7 +23,7 @@ void split_string(std::string const &str, const char delim,
 
 int main(int argc, char **argv)
 {
-    std::ofstream MyFile("results.txt");
+    // std::ofstream MyFile("results.txt");
 
     HashTable hash;
 
@@ -60,27 +60,26 @@ int main(int argc, char **argv)
         /*to clear vector of the previous line*/
         hash.AddBook(Book1);
 
-        // MyFile << hash.printTable(Book1) << hash.Hash(Book1.getTitle()) << "\n";
-        MyFile << hash.printTable(Book1) << " " << hash.Hash(Book1.getTitle()) << "\n";
+        // MyFile << hash.printTable(Book1) << " " << hash.Hash(Book1.getTitle()) << "\n";
         eachAuthor.clear();
     }
-    MyFile.close();
+    // MyFile.close();
     MyReadFile.close();
     while (true)
     {
         int selected;
         std::cout << "Welcome To The Online Library" << std::endl;
-        std::cout << "---MENU---" << std::endl;
-        std::cout << "Search Book   1" << std::endl;
-        std::cout << "Add Book      2" << std::endl;
-        std::cout << "Remove Book   3" << std::endl;
+        std::cout << "-----------MENU---------" << std::endl;
+        std::cout << "Search Book by Title....1" << std::endl;
+        std::cout << "Add Book................2" << std::endl;
+        std::cout << "Remove Book.............3" << std::endl;
         std::cout << "Select an option > " << std::endl;
         std::cin >> selected;
 
         if (selected == 1)
         {
             std::string title;
-            std::cout << "Enter title ";
+            std::cout << "\n Enter Book Title ";
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::getline(std::cin, title);
             hash.SearchBook(title);
@@ -112,6 +111,12 @@ int main(int argc, char **argv)
         }
         else if (selected == 3)
         {
+            std::string title;
+            std::cout << "Enter Book Title to Remove the Book";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::getline(std::cin, title);
+            // hash.SearchBook(title);
+            hash.RemoveBook(title);
         }
     }
 

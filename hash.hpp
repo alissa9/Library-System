@@ -20,6 +20,6 @@ public:
     void AddBook(Book book);
     std::string printTable(Book b);
     void SearchBook(std::string key);
-    
+    void RemoveBook(std::string key);
 };
 #endif
