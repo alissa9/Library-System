@@ -1,3 +1,11 @@
+
+/*
+main.cpp: reading the progrram and excuting the fucntions
+Author: M00714688
+Created : 07/04/2021
+Updated : 22/04/2021
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -68,7 +76,7 @@ int main(int argc, char **argv)
     while (true)
     {
         int selected;
-        std::cout << "Welcome To The Online Library" << std::endl;
+        std::cout << "\n Welcome To The Online Library" << std::endl;
         std::cout << "-----------MENU---------" << std::endl;
         std::cout << "Search Book by Title....1" << std::endl;
         std::cout << "Add Book................2" << std::endl;

@@ -1,5 +1,16 @@
+
+/*
+book.cpp: the book constructor with the gets and sets methods.
+Author: M00714688
+Created : 07/04/2021
+Updated : 22/04/2021
+*/
+
 #include "Book.hpp"
 #include <iostream>
+
+
+
 
 Book::Book()
 {

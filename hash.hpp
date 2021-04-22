@@ -1,4 +1,11 @@
 
+/*
+hash.hpp: the header file of hash table
+Author: M00714688
+Created : 07/04/2021
+Updated : 22/04/2021
+*/
+
 #include <iostream>
 #include <string>
 #include "Book.hpp"

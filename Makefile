@@ -1,3 +1,4 @@
+
 GXX = g++
 
 Library:main.o Book.o hash.o

@@ -1,4 +1,9 @@
-
+/*
+hash.cpp: it has the hash functions and table.
+Author: M00714688
+Created : 07/04/2021
+Updated : 22/04/2021
+*/
 #include <iostream>
 #include "hash.hpp"
 
@@ -72,7 +77,6 @@ std::string HashTable::printTable(Book b)
 
 void HashTable::SearchBook(std::string key)
 {
-
     int position = Hash(key);
 
     Book *Ptr = BooksTable[position];
@@ -94,7 +98,6 @@ void HashTable::SearchBook(std::string key)
 
 void HashTable::RemoveBook(std::string key)
 {
-
     int position = Hash(key);
     Book *delPtr;
     Book *Pointer1;
