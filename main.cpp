@@ -31,7 +31,6 @@ void split_string(std::string const &str, const char delim,
 
 int main(int argc, char **argv)
 {
-    // std::ofstream MyFile("results.txt");
 
     HashTable hash;
 
@@ -67,8 +66,6 @@ int main(int argc, char **argv)
         Book Book1(title, eachAuthor, ISBN, std::stoi(quantity));
         /*to clear vector of the previous line*/
         hash.AddBook(Book1);
-
-        // MyFile << hash.printTable(Book1) << " " << hash.Hash(Book1.getTitle()) << "\n";
         eachAuthor.clear();
     }
     // MyFile.close();
@@ -76,7 +73,7 @@ int main(int argc, char **argv)
     while (true)
     {
         int selected;
-        std::cout << "\n Welcome To The Online Library" << std::endl;
+        std::cout << "\nWelcome To The Online Library" << std::endl;
         std::cout << "-----------MENU---------" << std::endl;
         std::cout << "Search Book by Title....1" << std::endl;
         std::cout << "Add Book................2" << std::endl;
@@ -91,6 +88,12 @@ int main(int argc, char **argv)
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::getline(std::cin, title);
             hash.SearchBook(title);
+
+            /*input validation */
+            if (title == "")
+            {
+                std::cout << "\n Please input correct Title to search ";
+            }
         }
         else if (selected == 2)
         {
@@ -101,13 +104,25 @@ int main(int argc, char **argv)
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Enter Name of Book" << std::endl;
             std::getline(std::cin, title);
-
+            if (title == "")
+            {
+                std::cout << "\n Please input correct Title ";
+            }
             std::cout << "Enter Authors of Book" << std::endl;
             std::getline(std::cin, temp);
             listofauthors.push_back(temp);
+            if (temp == "")
+            {
+                std::cout << "\n Please input correct Title ";
+            }
 
             std::cout << "Enter the ISBN " << std::endl;
             std::getline(std::cin, ISBN);
+
+            if (ISBN == "")
+            {
+                std::cout << "\n Please input correct Title ";
+            }
 
             std::cout << "Enter the Quantity" << std::endl;
             std::cin >> qty;
@@ -125,6 +140,11 @@ int main(int argc, char **argv)
             std::getline(std::cin, title);
             // hash.SearchBook(title);
             hash.RemoveBook(title);
+
+            if (title == "")
+            {
+                std::cout << "\n Please input correct Title to Remove ";
+            }
         }
     }
 

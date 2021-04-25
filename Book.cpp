@@ -9,9 +9,6 @@ Updated : 22/04/2021
 #include "Book.hpp"
 #include <iostream>
 
-
-
-
 Book::Book()
 {
 }
