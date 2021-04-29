@@ -2,7 +2,7 @@
 #define _HASH_H_
 
 /*
-hash.hpp: the header file of hash table
+hash.hpp
 Author: M00714688
 Created : 07/04/2021
 Updated : 22/04/2021
@@ -16,7 +16,7 @@ class HashTable
 {
 
     /*defining the table size and the core of the hash table 
-which is a bucket that has a pointer to point at an item  */
+     which is a bucket that has a pointer to point at an item*/
 private:
     static const int SIZE = 317;
     Book *BooksTable[SIZE];

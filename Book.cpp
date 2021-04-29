@@ -1,6 +1,6 @@
 
 /*
-book.cpp: the book constructor with the gets and sets methods.
+book.cpp
 Author: M00714688
 Created : 07/04/2021
 Updated : 22/04/2021
@@ -12,6 +12,7 @@ Updated : 22/04/2021
 Book::Book()
 {
 }
+/*the Book Constructor with the Getters and Getters methods.*/
 Book::Book(std::string t, std::vector<std::string> a, std::string i, int q)
 {
     title = t;
@@ -20,6 +21,7 @@ Book::Book(std::string t, std::vector<std::string> a, std::string i, int q)
     quantity = q;
 }
 
+/*Setters methods*/
 void Book::setTitle(std::string title)
 {
     this->title = title;
@@ -48,6 +50,7 @@ void Book::setQuantity(int quantity)
     this->quantity = quantity;
 }
 
+/*Getters methods*/
 std::string Book::getTitle()
 {
     return this->title;

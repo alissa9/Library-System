@@ -1,6 +1,6 @@
 
 /*
-book.hpp: the book header 
+book.hpp
 Author: M00714688
 Created : 07/04/2021
 Updated : 22/04/2021
@@ -27,7 +27,7 @@ public:
     void setQuantity(int quantity);
     void printAuthors();
 
-    /*Getter methods*/
+    /*Callling the Getters methods*/
     std::string getTitle();
     std::vector<std::string> getAuthor();
     std::string getISBN();

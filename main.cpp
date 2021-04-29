@@ -1,9 +1,9 @@
 
 /*
-main.cpp: reading the progrram and excuting the fucntions
+main.cpp
 Author: M00714688
 Created : 07/04/2021
-Updated : 22/04/2021
+Updated : 29/04/2021
 */
 
 #include <iostream>
@@ -40,7 +40,6 @@ int main(int argc, char **argv)
     std::ifstream MyReadFile(argv[1]);
 
     // Use a while loop together with the getline() function to read the file line by line
-
     std::string title, authors, ISBN, quantity;
     std::vector<std::string> eachAuthor;
 
@@ -68,17 +67,16 @@ int main(int argc, char **argv)
         hash.AddBook(Book1);
         eachAuthor.clear();
     }
-    // MyFile.close();
     MyReadFile.close();
     while (true)
     {
         int selected;
         std::cout << "\nWelcome To The Online Library" << std::endl;
-        std::cout << "-----------MENU---------" << std::endl;
+        std::cout << "==========MENU==========" << std::endl;
         std::cout << "Search Book by Title....1" << std::endl;
         std::cout << "Add Book................2" << std::endl;
         std::cout << "Remove Book.............3" << std::endl;
-        std::cout << "Select an option > " << std::endl;
+        std::cout << "Select an option => " << std::endl;
         std::cin >> selected;
 
         if (selected == 1)
@@ -89,7 +87,7 @@ int main(int argc, char **argv)
             std::getline(std::cin, title);
             hash.SearchBook(title);
 
-            /*input validation */
+            /*input validation*/
             if (title == "")
             {
                 std::cout << "\n Please input correct Title to search ";
@@ -113,7 +111,7 @@ int main(int argc, char **argv)
             listofauthors.push_back(temp);
             if (temp == "")
             {
-                std::cout << "\n Please input correct Title ";
+                std::cout << "\n Please input correct Temp ";
             }
 
             std::cout << "Enter the ISBN " << std::endl;
@@ -121,7 +119,7 @@ int main(int argc, char **argv)
 
             if (ISBN == "")
             {
-                std::cout << "\n Please input correct Title ";
+                std::cout << "\n Please input correct ISBN";
             }
 
             std::cout << "Enter the Quantity" << std::endl;
